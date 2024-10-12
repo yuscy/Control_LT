@@ -19,25 +19,25 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
-        <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+        @include('layouts.include.admin.nav')
+
+
+        <div>
+            {{-- Aquí llamamos al sidebar directamente sin anidarlo --}}
+            {{ $sidebar }} <!-- Esto se completará con el contenido del sidebar en la vista -->
         </div>
+        
+        <div class="p-4 sm:ml-64">
+            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+                {{ $slot }}
+            </div>
+        </div>
+  
+
+       
 
         @stack('modals')
 
