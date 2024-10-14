@@ -18,8 +18,7 @@ class EmpresaController extends Controller
     {
         $empresas = Empresa::paginate();
 
-        return view('empresa.index', compact('empresas'))
-            ->with('i', ($request->input('page', 1) - 1) * $empresas->perPage());
+        return view('empresa.index', compact('empresas'));
     }
 
     /**
@@ -78,7 +77,8 @@ class EmpresaController extends Controller
     {
         Empresa::find($id)->delete();
 
-        return Redirect::route('empresas.index')
-            ->with('success', 'Empresa deleted successfully');
+        return Redirect::route('empresas.index')        
+        ->with('mensaje', 'Se elimino la empresa correctamente')
+        ->with('icono', 'success');
     }
 }

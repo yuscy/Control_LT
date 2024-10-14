@@ -2,17 +2,17 @@
 //SIDEBAR DEL MAIN
     $links = [
         [
-            'name' => 'Dashboard',
+            'name' => 'Inicio',
             'url' => route('admin.dashboard'),
             'active' => request()->routeIs('admin.dashboard'),
-            'icon' => 'fa-solid fa-gauge-high',
+            'icon' => 'fa-solid fa-bolt',
         ],
         // Puedes agregar más links aquí
         [
             'name' => 'Consultar',
             'url' => route('empresas.index'),
             'active' => request()->routeIs('empresas.index'),
-            'icon' => 'fa-solid fa-gauge-high',        
+            'icon' => 'fa-solid fa-magnifying-glass',        
         ],
 
     ]

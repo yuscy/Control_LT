@@ -2,23 +2,23 @@
 //SIDEBAR DEL MAIN
     $links = [
         [
-            'name' => 'Dashboard',
+            'name' => 'Inicio',
             'url' => route('admin.dashboard'),
             'active' => request()->routeIs('admin.dashboard'),
-            'icon' => 'fa-solid fa-gauge-high',
+            'icon' => 'fa-solid fa-bolt',
         ],
         // Puedes agregar más links aquí
         [
             'name' => 'Consultar',
             'url' => route('aprobaciones.show'),
             'active' => request()->routeIs('aprobaciones.show'),
-            'icon' => 'fa-solid fa-gauge-high',        
+            'icon' => 'fa-solid fa-magnifying-glass',        
         ],
         [
             'name' => 'Registrar',
             'url' => route('aprobaciones.crear'),
             'active' => request()->routeIs('aprobaciones.crear'),
-            'icon' => 'fa-solid fa-gauge-high',        
+            'icon' => 'fa-solid fa-user-plus',        
         ],
 
     ]
