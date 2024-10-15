@@ -1,27 +1,48 @@
-<div class="space-y-6">
-    
-    <div>
-        <x-label for="nombre" :value="__('Nombre')"/>
-        <x-input id="nombre" name="nombre" type="text" class="mt-1 block w-full" :value="old('nombre', $empresa?->nombre)" autocomplete="nombre" placeholder="Nombre"/>
-        {{-- <x-input-error class="mt-2" :messages="$errors->get('nombre')"/> --}}
+<div class="p-4 md:p-5 space-y-4">
+
+    <div class="relative">
+        <input type="text" id="nombre" name="nombre" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+        <label id="nombre" for="nombre"class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Nombre de la empresa</label>
     </div>
-    <div>
-        <x-label for="tramo" :value="__('Tramo')"/>
-        <x-input id="tramo" name="tramo" type="text" class="mt-1 block w-full" :value="old('tramo', $empresa?->tramo)" autocomplete="tramo" placeholder="Tramo"/>
-        {{-- <x-input-error class="mt-2" :messages="$errors->get('tramo')"/> --}}
+    @error('nombre')
+    <small style="">{{ $message }}</small>
+    @enderror
+
+    <div class="relative">
+        <input type="text" id="tipo" name="tipo" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+        <label id="tipo" for="tipo"class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Tipo</label>
     </div>
-    <div>
-        <x-label for="tipo" :value="__('Tipo')"/>
-        <x-input id="tipo" name="tipo" type="text" class="mt-1 block w-full" :value="old('tipo', $empresa?->tipo)" autocomplete="tipo" placeholder="Tipo"/>
-        {{-- <x-input-error class="mt-2" :messages="$errors->get('tipo')"/> --}}
-    </div>
-    <div>
-        <x-label for="nit" :value="__('Nit')"/>
-        <x-input id="nit" name="nit" type="text" class="mt-1 block w-full" :value="old('nit', $empresa?->nit)" autocomplete="nit" placeholder="Nit"/>
-        {{-- <x-input-error class="mt-2" :messages="$errors->get('nit')"/> --}}
+    @error('tipo')
+    <small style="">{{ $message }}</small>
+    @enderror
+
+    <div class="relative">
+        <input type="text" id="nit" name="nit" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+        <label id="nit" for="nit" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">NIT</label>
     </div>
 
-    <div class="flex items-center gap-4">
-        <x-button>Submit</x-button>
+    <div>
+        <div class="relative">
+            <input type="text" id="filled_error" aria-describedby="filled_error_help" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white dark:border-red-500 focus:outline-none focus:ring-0 border-red-600 focus:border-red-600 dark:focus-border-red-500 peer" placeholder=" " />
+            <label for="filled_error" class="absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 text-red-600 dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Filled error</label>
+        </div>
+        <p id="filled_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span class="font-medium">Oh, snapp!</span> Some error message.</p>
     </div>
-</div>
+
+    @error('nit')
+    <p id="filled_error_help" class="mt-2 text-xs text-red-600 dark:text-red-400"><span class="font-medium">Oh, snapp!</span> Some error message.</p>
+    @enderror
+
+    <label for="tramo" id="tramo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tramo</label>
+    <select id="tramo" name="tramo" class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option selected value="Tramo 1">Tramo 1</option>
+      <option value="Tramo 2">Tramo 2</option>
+      <option value="Tramo 3">Tramo 3</option>
+    </select>
+
+  </div>
+  <!-- Modal footer -->
+  <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+      <button data-modal-hide="crear-modal" type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Crear</button>
+      <button data-modal-hide="crear-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Cerrar</button>
+  </div>

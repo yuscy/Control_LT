@@ -16,7 +16,7 @@ class EmpresaController extends Controller
      */
     public function index(Request $request): View
     {
-        $empresas = Empresa::paginate();
+        $empresas = Empresa::all();
 
         return view('empresa.index', compact('empresas'));
     }
