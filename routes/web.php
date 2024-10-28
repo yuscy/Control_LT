@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\FacturaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -35,3 +36,11 @@ Route::get('/aprobaciones/crear', function () {
 })->name('aprobaciones.crear');
 
 Route::resource('empresas', EmpresaController::class);
+
+
+//Rutas de Facturas:
+Route::resource('facturas', FacturaController::class);
+
+//Rutas auxiliares de Facturas:
+Route::get('/factura/torre2', [FacturaController::class, 'torre2'])->name('factura.torre2');
+Route::get('/factura/pata', [FacturaController::class, 'pata'])->name('factura.pata');
